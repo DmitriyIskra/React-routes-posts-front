@@ -1,0 +1,15 @@
+.wrapper-buttons {
+    display: flex;
+    gap: 5px;
+
+    justify-content: flex-end;
+}
+
+.wr-close-button {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+
+    height: 12px;
+    width: 12px;
+}

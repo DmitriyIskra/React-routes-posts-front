@@ -1,0 +1,10 @@
+.item {
+    display: flex;
+    width: 100%;
+    padding: 8px;
+    gap: 8px;
+
+    flex-direction: column;
+    
+    background: #fff;
+}

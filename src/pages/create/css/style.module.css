@@ -1,0 +1,23 @@
+.wrapper {
+    display: flex;
+    gap: 6px;
+
+    flex-direction: column;
+}
+
+.wr-header {
+    display: flex;
+
+    justify-content: space-between;
+}
+
+.wr-button {
+    display: flex;
+    height: 43px;
+    padding-right: 5px;
+
+    background: #F5F6F7;
+
+    justify-content: flex-end;
+    align-items: center;
+}

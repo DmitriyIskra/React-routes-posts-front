@@ -1,0 +1,32 @@
+.wrapper {
+    display: flex;
+    gap: 5px;
+}
+
+.wr-user-foto {
+    height: 32px;
+    width: 32px;
+}
+
+.wr-input {
+    display: flex;
+
+    flex-grow: 1;
+    align-items: center;
+}
+
+.wr-input input {
+    height: 33px;
+    padding-left: 8px;
+    padding-right: 8px;
+
+    border-radius: 1rem;
+    border: 1px solid #CBCFD4;
+    background-color: #F2F3F5;
+
+    flex-grow: 1;
+}
+
+.wr-input input:focus {
+    outline: 1px solid #bdbfc2;
+}

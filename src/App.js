@@ -1,23 +1,39 @@
-import logo from './logo.svg';
 import './App.css';
+import { Routes, Route, Navigate } from 'react-router-dom';
+
+// components
+import NewPostButton from './components/buttons/NewPost/NewPostButton';
+
+// context
+import AllPosts from './context/AllPosts';
+
+// pages
+import List from './pages/MainPage/List';
+import Post from './pages/post/Post';
+import Create from './pages/create/Create';
+
+// hooks
+import usePosts from './hooks/usePosts';
 
 function App() {
+  // Получаем посты
+  const posts = usePosts(process.env.REACT_APP_GET_POSTS)
+ 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <header className="header">
+        <NewPostButton />
       </header>
+      <AllPosts.Provider value={posts}>
+        <main className="main">
+          <Routes>
+            {posts && <Route path="/" element={<List />}/>}
+            <Route path='/main' element={<Navigate to='/' />}/>
+            <Route path={'/posts/:id'} element={<Post />}/>
+            <Route path='/posts/new' element={<Create />} />
+          </Routes>
+        </main>
+      </AllPosts.Provider>
     </div>
   );
 }
