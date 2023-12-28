@@ -1,0 +1,53 @@
+.wrapper {
+    display: flex;
+    gap: 5px;
+
+    flex-direction: column;
+}
+
+.header {
+    display: flex;
+    height: 38px;
+    padding-right: 6px;
+    padding-left: 6px;
+
+    background: #F5F6F7;
+
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title {
+    font-size: 14px;
+    line-height: 1.2;
+}
+
+.tabs-list {
+    display: flex;
+    height: 112px;
+
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.tabs-item {
+    display: flex;
+    height: 32px;
+    width: 235px;
+
+    background-color: #F5F6F7;
+    border-radius: 50px;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper-button {
+    display: flex;
+    height: 38px;
+
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 6px;
+}

@@ -11,26 +11,29 @@ import AllPosts from './context/AllPosts';
 import List from './pages/MainPage/List';
 import Post from './pages/post/Post';
 import Create from './pages/create/Create';
+import Update from './pages/update/Update';
 
 // hooks
 import usePosts from './hooks/usePosts';
 
 function App() {
   // Получаем посты
-  const posts = usePosts(process.env.REACT_APP_GET_POSTS)
+  const [posts, setPosts] = usePosts(process.env.REACT_APP_GET_POSTS);
  
   return (
     <div className="App">
       <header className="header">
         <NewPostButton />
       </header>
-      <AllPosts.Provider value={posts}>
+      <AllPosts.Provider value={{posts, setPosts}}>
         <main className="main">
+          {!posts ? 'Loading...' : ''}
           <Routes>
             {posts && <Route path="/" element={<List />}/>}
             <Route path='/main' element={<Navigate to='/' />}/>
             <Route path={'/posts/:id'} element={<Post />}/>
             <Route path='/posts/new' element={<Create />} />
+            <Route path='/posts/change/:id' element={<Update />} />
           </Routes>
         </main>
       </AllPosts.Provider>

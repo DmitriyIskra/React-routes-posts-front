@@ -15,23 +15,23 @@ export default function Post() {
   const params = useParams();
   const { id } = params;
   
-  const posts = usePosts(`${process.env.REACT_APP_GET_POSTS}/${id}`);
-
+  const [posts, setPosts] = usePosts(`${process.env.REACT_APP_GET_POSTS}/${id}`);
+  
   return (
     <>
-      {posts && <ul style={{position: 'relative'}}>
+      {posts && <ul style={{position: 'relative'}}> 
         <WrapperPost id={id}>
             <div className={styles['wr-close-button']}>
-              <CloseButton />
+              <CloseButton path='/main'/>
             </div>
             <Header date={posts.post.created}/>
             <Content text={posts.post.content}/>
             <div className={styles['wrapper-buttons']}>
-                <ChangeButton />
+                <ChangeButton id={id} />
                 <DeleteButton />
             </div>
         </WrapperPost>
-    </ul>}
+      </ul>}
     </>
   )
 }

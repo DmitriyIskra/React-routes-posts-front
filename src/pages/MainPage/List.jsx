@@ -15,7 +15,7 @@ import Comment from '../../components/comment/Comment';
 
 export default function List() {
   
-  const posts = useContext(AllPosts);
+  const { posts } = useContext(AllPosts);
 
   return (
     <ul className={styles.list}>

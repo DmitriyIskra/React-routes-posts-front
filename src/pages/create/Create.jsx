@@ -1,4 +1,5 @@
 import React from 'react';
+
 import styles from './css/style.module.css';
 
 import WrapperPost from '../../components/wrapper-post/WrapperPost';
@@ -12,7 +13,7 @@ export default function Create() {
     <WrapperPost>
       <div className={styles['wr-header']}>
         <HeaderNew />
-        <CloseButton />
+        <CloseButton path='/main'/>
       </div>
       <InputContent />
       <div className={styles["wr-button"]}>
